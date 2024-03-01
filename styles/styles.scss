@@ -3,11 +3,11 @@
 }
 
 :root {
-    --primary: #3461FF;
+    --primary: #3461ff;
     --dark-gray: #777777;
 }
 
-$primary: #3461FF;
+$primary: #3461ff;
 
 .container {
     max-width: 1300px;
@@ -43,7 +43,7 @@ ul {
 a {
     color: inherit;
     text-decoration: none;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
 
     &:hover {
         color: var(--primary);
@@ -83,7 +83,7 @@ h3,
 
     i {
         margin-left: 5px;
-        transition: all .15s ease-in-out;
+        transition: all 0.15s ease-in-out;
     }
 
     &:hover {
@@ -114,13 +114,13 @@ h3,
 .btn--primary {
     @include button-style($primary, #fff);
     font-size: 18px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     border: 2px solid transparent;
 
     &:hover {
         background-color: #fff;
         color: var(--primary);
-        border-color: var(--primary)
+        border-color: var(--primary);
     }
 }
 
@@ -138,10 +138,9 @@ h3,
     padding-left: 30px;
 
     &::placeholder {
-        color: #AAAAAA;
+        color: #aaaaaa;
     }
 }
-
 
 .header {
     padding: 18px 0;
@@ -156,6 +155,11 @@ h3,
     ul {
         display: flex;
         gap: 15px;
+    }
+
+    &__burger {
+        width: 20px;
+        display: none;
     }
 }
 
@@ -230,14 +234,14 @@ h3,
 }
 
 .companies {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     margin-top: 110px;
     padding-top: 78px;
     padding-bottom: 135px;
 
     &__wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         row-gap: 100px;
         column-gap: 95px;
@@ -352,7 +356,6 @@ h3,
     &__item {
         img {
             object-fit: cover;
-            height: 324px;
         }
     }
 
@@ -371,7 +374,7 @@ h3,
         border-radius: 32px;
         color: #fff;
         padding: 98px 57px;
-        background-image: url('../img/Ellipse_bg.svg');
+        background-image: url("../img/Ellipse_bg.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 50%;
@@ -398,7 +401,7 @@ h3,
     padding: 122px 0 117px;
 
     .txt {
-        color: rgba(0, 0, 0, .6)
+        color: rgba(0, 0, 0, 0.6);
     }
 
     &__wrapper {
@@ -420,6 +423,7 @@ h3,
 }
 
 .testimonial {
+    
     padding: 94px 0 106px;
 
     &__heading {
@@ -445,13 +449,13 @@ h3,
         border: none;
 
         &.arrow-prev {
-            background-color: #F8F9FF;
+            background-color: #f8f9ff;
 
             svg {
                 transform: rotate(180deg);
 
                 path {
-                    fill: #A5A5A5
+                    fill: #a5a5a5;
                 }
             }
         }
@@ -468,7 +472,7 @@ h3,
     &__slide {
         padding: 40px;
         border-radius: 30px;
-        background-color: #F8F9FF;
+        background-color: #f8f9ff;
 
         &-heading {
             display: flex;
@@ -501,7 +505,7 @@ h3,
         justify-content: space-between;
         align-items: center;
         background-color: #232038;
-        background-image: url('../img/cross_bg.svg');
+        background-image: url("../img/cross_bg.svg");
         padding: 52px 81px;
         border-radius: 56px;
         color: #fff;
@@ -535,12 +539,12 @@ h3,
 
     &__accordeon {
         &-item {
-            border-top: 1px solid rgba(0, 0, 0, .2);
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
             padding: 32px 0;
             font-size: 20px;
 
             &:last-child {
-                border-bottom: 1px solid rgba(0, 0, 0, .2);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
             }
 
             &.active {
@@ -606,7 +610,6 @@ h3,
 
         .link--primary {
             margin-top: 42px;
-
         }
     }
 }
@@ -685,7 +688,6 @@ h3,
             width: 45%;
 
             &-image-item {
-
                 &:nth-child(1),
                 &:nth-child(4) {
                     width: 60%;
@@ -714,7 +716,9 @@ h3,
     }
 
     .team {
-        padding: 90px 0;
+        &__pics 
+        { height: auto;
+            object-fit: contain;}
     }
 
     .testimonial {
@@ -722,7 +726,7 @@ h3,
     }
 
     .banner-cta {
-        margin-top: 90px 0;
+        margin: 90px 0;
     }
 
     .faq {
@@ -734,26 +738,292 @@ h3,
     }
 }
 
-// @media screen and (max-width: 1199px) {
-//     .hero {
-//         &__right {
-//             .absolute-img {
-//                 width: 70%;
-//             }
-//         }
-//     }
-// }
+@media screen and (max-width: 1199px) {
+    .hero {
+        &__right {
+            .absolute-img {
+                width: 70%;
+            }
+        }
+    }
+    .banner {
+        &__wrapper {
+            gap: 60px;
+        }
+    }
+    .team {
+        padding: 60px 0;
+        &__pics {
+            img {
+                width: calc(33.333% - 15px);
+            }
+        }
+    }
+    .testimonial {
+        &__controls {
+            margin-left: 20px;
+        }
+        .arrow {
+            width: 65px;
+            height: 65px;
+        }
+        &__slide {
+            padding: 30px;
+            &-heading {
+                flex-wrap: wrap;
+            }
+            .user-info {
+                width: 100%;
+            }
+        }
+    }
+}
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    h2,h2 {
+        font-size: 3em;
+    }
+    .header {
+        padding: 15px 0;
+        &__menu {
+            display: none;
+        }
+        &__burger {
+            display: block;
+        }
+        &__cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+    .hero {
+        margin-top: 80px;
+        h1 {
+            font-size: 3em;
+        }
+        &__wrapper {
+            gap: 10px;
+        }
+        .input {
+            height: 50px;
+        }
+        .btn {
+            height: 50px;
+        }
+        .hero__right-image-item {
+            &:nth-of-type(2) {
+                .absolute-img {
+                    top: -25px;
+                    left: -48%;
+                }
+            }
 
-@media screen and (max-width: 767px) {}
+            &:nth-of-type(5) {
+                .absolute-img {
+                    top: -30px;
+                    left: 65%;
+                }
+            }
+        }
+    }
+    .companies {
+        margin-top: 80px;
+        margin-bottom: 30px;
+        padding-top: 48px;
+        padding-bottom: 55px;
+        &__wrapper {
+            column-gap: 40px;
+            row-gap: 60px;
+            margin-top: 80px;
+        }
+    }
+    .stats {
+        padding: 57px 0;
+        &__wrapper {
+            flex-wrap: wrap;
+            > * {
+                width: 100%;
+            }
+        }
+        &__right {
+            order: 1;
+            margin-bottom: 30px;
+            .link--primary {
+                margin-top: 32px;
+            }
+        }
+        &__left {
+            order: 2;
+        }
+    }
+    .process {
+        &__wrapper {
+            flex-direction: column;
+        }
+        &__info {
+            width: 100%;
+            gap: 15px;
+            img {
+                width: 100%;
+                margin-top: 24px;
+                height: 200px;
+                border-radius: 20px;
+            }
+        }
+        &__list {
+            margin-top: 64px;
+            width: 100%;
+        }
+    }
+    .our-work {
+        padding: 60px 0;
+        &__wrapper {
+            img {
+                border-radius:20px;
+                height: calc(100% - 30px);
+            }
+            .btn {
+                margin-top: 25px;
+            }
+        }
+    }
+    .banner {
+        margin-top: 60px;
+        &__layer {
+            padding: 48px 32px;
+            border-radius:28px;
+        }
+        &__wrapper {
+            gap: 60px;
+        }
+        .h2 {
+            font-size: 2.4em;
+        }
+        &__title {
+            width: 40%;
+        }
+        .txt {
+            font-size: 16px;
+        }
+        &__cta {
+            width: calc(60% - 30px);
+        }
+    }
+    .team {
+        padding: 90px 0;
+        &__wrapper {
+            gap: 30px;
+        }
+        .h2 {
+            font-size: 3em;
+        }
+        &__pics {
+            gap: 10px;
+            img {
+                width: calc(100% / 3 - 15px);
+            }
+        }
+        .txt {
+            padding-top: 0;
+        }
+        .btn {
+            margin-top: 10px;
+        }
+    }
+    .testimonial {
+        padding: 60px 0;
+        h2 {
+            font-size: 3em;
+        }
+        .arrow {
+            height: 55px;
+            width: 55px;
+            svg {
+                width: 80%;
+            }
+        }
+        &__slide {
+            &:nth-child(2) {display: none;}
+        }
+       
+    }
+    .banner-cta {
+        margin: 60px 0;
+        &__wrapper {
+            padding: 60px 30px;
+            border-radius: 25px;
+        }
+        h2 {
+            font-size: 2.4em;
+            width: 90%;
+        }
+        &__illustration {
+            height: 200px;
+            width: 200px;
+        }
+        .btn {
+            margin-top: 60px;
+        }
+    }
+    .faq {
+        padding: 60px 0;
+        &__wrapper {
+            flex-direction: column-reverse;
+            width: 100%;
+            gap: 60px;
+        }
+    }
+    .footer {
+        &__top {
+            .container {
+                background-color: #f9f7f7;
+            }
+        }
 
-@media screen and (max-width: 559px) {}
+        &__bottom {
+            .container {
+                background-color: #000;
+            }
+        }
+        &__logo {
+            width: calc(187px * 0.7);
+            height: calc(42px * 0.7);
+            margin-bottom: 35px;
+            margin-left: 10px;
+        }
+        &__social-icons {
+            gap: 25px;
+        }
+        .btn {
+            width: (217px * 0.7);
+            margin-top: 40px;
+        }
+        &__menus {
+            gap: 50px;
+            padding: 40px 0 40px;
+        }
+        .bottom-wrapper {
+            padding: 30px 0 30px;
+            font-size: 0.9em;
+            .policy {
+                gap: 45px;
+            }
+        }
+    }
+}
 
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 767px) {
+}
 
-@media screen and (max-width: 374px) {}
+@media screen and (max-width: 559px) {
+}
 
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 374px) {
+}
 
 //1440
 //1200
